@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfInteractions.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="350" Width="525"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfInteractions="clr-namespace:WpfInteractions"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance wpfInteractions:MainWindowViewModel}"
+        Title="{Binding WindowTitle}" 
+        Name="MainWindowView">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <!--Bind a command for the event, enable parameter sending-->
+            <i:InvokeCommandAction Command="{Binding WindowCommand}" CommandParameter="This is command parameters"/>
+        </i:EventTrigger>
+
+        <i:EventTrigger EventName="Loaded">
+            <!--Bind a command for the event, enable parameter sending-->
+            <i:InvokeCommandAction Command="{Binding WindowCommand}" CommandParameter="Loaded"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <StackPanel>
+        <Label Content="MouseOver label event" Margin="161,55,195,190" Background="Yellow">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseEnter">
+                    <!--Call a method in the view model directly-->
+                    <ei:CallMethodAction TargetObject="{Binding}" MethodName="OnLabelMouseEnter"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Label>
+
+        <Button Content="Ineraction Close button">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=MainWindowView}" MethodName="Close" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+
+    </StackPanel>
+</Window>

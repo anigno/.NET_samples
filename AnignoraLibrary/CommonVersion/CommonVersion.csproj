@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54AE6E70-E1B6-4099-96B2-24F3B9342789}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonVersion</RootNamespace>
+    <AssemblyName>CommonVersion</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\CommonAssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnignoraCommonAndHelpers\AnignoraCommonAndHelpers.csproj">
+      <Project>{E5D8C6FC-B5A6-48D8-849D-86E2F8AA6527}</Project>
+      <Name>AnignoraCommonAndHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraCommunication\AnignoraCommunication.csproj">
+      <Project>{5EDFAE95-D230-4B77-99D4-9FC5329FCAD5}</Project>
+      <Name>AnignoraCommunication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraDataTypes\AnignoraDataTypes.csproj">
+      <Project>{7B082431-65FB-4A04-9F43-051523D24DD6}</Project>
+      <Name>AnignoraDataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraIO\AnignoraIO.csproj">
+      <Project>{146F3906-9908-4F11-9836-2A26584BB247}</Project>
+      <Name>AnignoraIO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraLibrary_2010_Tester\AnignoraLibrary_2010_Tester.csproj">
+      <Project>{FD23AC56-A41A-41DA-8616-9CCBB0488087}</Project>
+      <Name>AnignoraLibrary_2010_Tester</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraLoggingServices\AnignoraLoggingServices.csproj">
+      <Project>{69C5542F-A4B2-4094-99AD-ACE45CCD51A7}</Project>
+      <Name>AnignoraLoggingServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraMultimedia\AnignoraMultimedia.csproj">
+      <Project>{35BB660A-0C90-4C7A-AE84-FFF987995245}</Project>
+      <Name>AnignoraMultimedia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraProcesses\AnignoraProcesses.csproj">
+      <Project>{9CB4A2AD-D2BD-4CA2-B325-994DBA77D851}</Project>
+      <Name>AnignoraProcesses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraUI\AnignoraUI.csproj">
+      <Project>{028AE9FE-91DE-4FFB-8DDD-030950DA80B9}</Project>
+      <Name>AnignoraUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{146F3906-9908-4F11-9836-2A26584BB247}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnignoraIO</RootNamespace>
+    <AssemblyName>AnignoraIO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\3rd Party\Log4Net\1.2.10.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonVersion\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AsyncFileAndFolderCopy\AsyncFileAndFolderCopyEnums.cs" />
+    <Compile Include="AsyncFileAndFolderCopy\CopyDirectoryEventArgs.cs" />
+    <Compile Include="AsyncFileAndFolderCopy\CopyFileEventArgs.cs" />
+    <Compile Include="AsyncFileAndFolderCopy\AsyncFileAndForlderCopyProvider.cs" />
+    <Compile Include="CsvFileReaderWriter.cs" />
+    <Compile Include="DirectorySyncronizer.cs" />
+    <Compile Include="DirectoryWalking\DirectoryWalkingCommon.cs" />
+    <Compile Include="DirectoryWalking\DirectoryDataEventArgs.cs" />
+    <Compile Include="DirectoryWalking\DirectoryWalker.cs" />
+    <Compile Include="DirectoryWalking\DirectoryWalkerActivityEventArgs.cs" />
+    <Compile Include="FileAndFolderlnfoExtensions.cs" />
+    <Compile Include="DirectoryWalking\StartCalculationThreadParams.cs" />
+    <Compile Include="FileCopyNoneBlocking\FileCopyNoneBlockingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileCopyNoneBlocking\FileCopyNoneBlockingControl.Designer.cs">
+      <DependentUpon>FileCopyNoneBlockingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileCopyNoneBlocking\FileCopyNoneBlockingManager.cs" />
+    <Compile Include="FileSystemWalker.cs" />
+    <Compile Include="NetworkShares\NetWorkBrowser.cs" />
+    <Compile Include="NetworkShares\NetworkSharesCommon.cs" />
+    <Compile Include="NetworkShares\ShareCollection.cs" />
+    <Compile Include="NetworkShares\ShareItem.cs" />
+    <Compile Include="StreamReaderHebrew.cs" />
+    <Compile Include="StreamWriterHebrew.cs" />
+    <Compile Include="UsbKeyFinder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FileCopyNoneBlocking\FileCopyNoneBlockingControl.resx">
+      <DependentUpon>FileCopyNoneBlockingControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnignoraCommonAndHelpers\AnignoraCommonAndHelpers.csproj">
+      <Project>{E5D8C6FC-B5A6-48D8-849D-86E2F8AA6527}</Project>
+      <Name>AnignoraCommonAndHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraDataTypes\AnignoraDataTypes.csproj">
+      <Project>{7B082431-65FB-4A04-9F43-051523D24DD6}</Project>
+      <Name>AnignoraDataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraUI\AnignoraUI.csproj">
+      <Project>{028ae9fe-91de-4ffb-8ddd-030950da80b9}</Project>
+      <Name>AnignoraUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

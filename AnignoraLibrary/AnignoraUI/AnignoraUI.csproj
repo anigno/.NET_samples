@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{028AE9FE-91DE-4FFB-8DDD-030950DA80B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnignoraUI</RootNamespace>
+    <AssemblyName>AnignoraUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonVersion\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Buttons\ButtonGradientGlow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\DesktopSwapping\DesktopSwap.cs" />
+    <Compile Include="Common\CrossThreadActivities.cs" />
+    <Compile Include="Common\DesktopSwapping\WINDOWINFO.cs" />
+    <Compile Include="Common\DesktopSwapping\ExternDlls.cs" />
+    <Compile Include="Common\DesktopSwapping\RECT.cs" />
+    <Compile Include="Common\IconExtractor.cs" />
+    <Compile Include="Common\LanguageExtension.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Containers\PanelWithButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ScrollHelper.cs" />
+    <Compile Include="Common\TooltipLabelExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ucWebBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\ucWebBrowser.Designer.cs">
+      <DependentUpon>ucWebBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UIHelper.cs" />
+    <Compile Include="Control\ControlTransparent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Grids\DataGridViewAuto\Attributes\CellAlignmentAttribute.cs" />
+    <Compile Include="Grids\DataGridViewAuto\Attributes\StringHideAttribute.cs" />
+    <Compile Include="Grids\DataGridViewAuto\DataGridViewAuto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Grids\DataGridViewAuto\Attributes\HeaderAttribute.cs" />
+    <Compile Include="Grids\DataGridViewAuto\IDataGridViewAutoRowItem.cs" />
+    <Compile Include="Grids\DataGridViewAuto\Attributes\RangeColorAttribute.cs" />
+    <Compile Include="Grids\DataGridViewAuto\Attributes\StringColorAttribute.cs" />
+    <Compile Include="Grids\DataGridViewAuto\Attributes\StringFormatAttribute.cs" />
+    <Compile Include="Labels\LabelAsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelOneShotTriggered.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelPing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProgressBarsAndGauges\AnignoProgressBarFlat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProgressBarsAndGauges\ProgressBarGradient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProgressBarsAndGauges\ProgressBarRoundedSimple.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProgressBarsAndGauges\ProgressBarSlidingScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressBarsAndGauges\ProgressBarSlidingScaleB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProgressBarsAndGauges\ProgressBarWithHistoryGraph.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\GenericInvoker.cs" />
+    <Compile Include="Graphs\GraphDateToFloat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Graphs\GraphFloatToFloat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Graphs\GraphLongToLong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Graphs\GraphTimeToFloat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HooksAndImmulate\Declerations.cs" />
+    <Compile Include="HooksAndImmulate\KeyboardHookController.cs" />
+    <Compile Include="HooksAndImmulate\MouseHookController.cs" />
+    <Compile Include="Labels\LabelDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelGradientBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelGradientEllipse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelGradientLinear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelGradientPath.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\LabelRoundedCorners.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lists\ListViewFilesBrowse\ListViewFilesBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lists\ListViewFilesBrowse\ResourceMain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceMain.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\ListViewHelper.cs" />
+    <Compile Include="Grids\GridLists\GridListViewCustomScroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grids\GridLists\GridListViewCustomScroll.Designer.cs">
+      <DependentUpon>GridListViewCustomScroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grids\GridLists\GridListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Grids\GridLists\AutoGridColumnAttribute.cs" />
+    <Compile Include="Lists\ListTreeView\ListTreeViewItem.cs" />
+    <Compile Include="Lists\ListTreeView\ListTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lists\ListTreeView\ResourceImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Selections\SelectionTimeInDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Selections\SelectionTimeInDay.Designer.cs">
+      <DependentUpon>SelectionTimeInDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabControls\TabControlColors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxs\TextBoxBrowse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextBoxs\TextBoxBrowse.Designer.cs">
+      <DependentUpon>TextBoxBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeViews\TreeViewExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViews\TreeViewFilesBrowse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ScreenHelper.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\ucWebBrowser.resx">
+      <DependentUpon>ucWebBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grids\GridLists\GridListViewCustomScroll.resx">
+      <DependentUpon>GridListViewCustomScroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\ListTreeView\ResourceImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\ListViewFilesBrowse\ResourceMain.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceMain.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selections\SelectionTimeInDay.resx">
+      <DependentUpon>SelectionTimeInDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBoxs\TextBoxBrowse.resx">
+      <DependentUpon>TextBoxBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lists\ListTreeView\Resources\Closed Folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lists\ListTreeView\Resources\FILE.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lists\ListTreeView\Resources\Open Folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_blank.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hard_drive_1.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

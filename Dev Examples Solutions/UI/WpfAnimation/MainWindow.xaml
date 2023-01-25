@@ -1,0 +1,62 @@
+﻿<Window x:Class="WpfAnimation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="SomeRectangle" Storyboard.TargetProperty="Width" 
+                                     From="50" To="200" Duration="0:0:1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        
+        <StackPanel>
+            
+            <Expander Header="Hello expender"  ExpandDirection="Down" Background="Turquoise">
+                <StackPanel Background="Yellow">
+                    <Label Content="Hello"/>
+                    <TextBlock Text="World"/>
+                </StackPanel>
+            </Expander>
+
+            <Label Name="SomeRectangle" Height="50" Width="50" Background="Blue" Foreground="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Rectangle.MouseLeftButtonDown">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <StringAnimationUsingKeyFrames 
+                                Storyboard.TargetName="SomeRectangle" 
+                                Storyboard.TargetProperty="Content"
+                                Duration="0:0:3">
+                                    <DiscreteStringKeyFrame Value="Hello" KeyTime="0:0:0" />
+                                    <DiscreteStringKeyFrame Value="  Hello" KeyTime="0:0:0.5" />
+                                    <DiscreteStringKeyFrame Value="   Hello" KeyTime="0:0:1" />
+                                    <DiscreteStringKeyFrame Value="    Hello" KeyTime="0:0:1.5" />
+                                    <DiscreteStringKeyFrame Value="     Hello" KeyTime="0:0:2" />
+                                    <DiscreteStringKeyFrame Value="      Hello" KeyTime="0:0:2.5" />
+                                    <DiscreteStringKeyFrame Value="       Hello" KeyTime="0:0:3" />
+                                </StringAnimationUsingKeyFrames>
+                                <DoubleAnimation 
+                                Storyboard.TargetName="SomeRectangle" 
+                                Storyboard.TargetProperty="Width"
+                                By="100" Duration="0:0:2" />
+                                <DoubleAnimationUsingKeyFrames 
+                                Storyboard.TargetName="SomeRectangle" 
+                                Storyboard.TargetProperty="Height"
+                                Duration="0:0:2.5" 
+                                RepeatBehavior="Forever">
+                                    <LinearDoubleKeyFrame Value="100" KeyTime="0:0:1"/>
+                                    <LinearDoubleKeyFrame Value="50" KeyTime="0:0:2"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+        </StackPanel>
+    </Grid>
+</Window>

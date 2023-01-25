@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5EDFAE95-D230-4B77-99D4-9FC5329FCAD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnignoraCommunication</RootNamespace>
+    <AssemblyName>AnignoraCommunication</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdParty\log4net\1.2.10.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonVersion\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Agents\Handlers\CommandHandler.cs" />
+    <Compile Include="Agents\Icd\IcdCommand.cs" />
+    <Compile Include="Agents\Icd\IcdRequest.cs" />
+    <Compile Include="Agents\Icd\IcdResponse.cs" />
+    <Compile Include="Agents\MsmqAgent.cs" />
+    <Compile Include="Agents\Handlers\RequestHandler.cs" />
+    <Compile Include="Agents\RequestsList.cs" />
+    <Compile Include="Agents\Handlers\ResponseHandler.cs" />
+    <Compile Include="Agents\Handlers\ResponseNull.cs" />
+    <Compile Include="Communicators\MsmqCommunicator.cs" />
+    <Compile Include="Crc32.cs" />
+    <Compile Include="Email\EmailSenderOld.cs" />
+    <Compile Include="Email\EmailSenderTester.cs" />
+    <Compile Include="Email\EmailSendingService.cs" />
+    <Compile Include="Email\MailMessageEx.cs" />
+    <Compile Include="Email\SmtpClientByGmail.cs" />
+    <Compile Include="Email\SmtpClientEx.cs" />
+    <Compile Include="FTP\AnignoFtpClient.cs" />
+    <Compile Include="Communicators\Common.cs" />
+    <Compile Include="Communicators\MsmqCommunicatorMessage.cs" />
+    <Compile Include="FTP\EditFtpNet\Appender.cs" />
+    <Compile Include="FTP\EditFtpNet\BandwidthThrottler.cs" />
+    <Compile Include="FTP\EditFtpNet\BaseSocket.cs" />
+    <Compile Include="FTP\EditFtpNet\CustomFileParsers.cs" />
+    <Compile Include="FTP\EditFtpNet\DirectoryEmptyStrings.cs" />
+    <Compile Include="FTP\EditFtpNet\FileAppender.cs" />
+    <Compile Include="FTP\EditFtpNet\FileNotFoundStrings.cs" />
+    <Compile Include="FTP\EditFtpNet\FileTransferException.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPActiveDataSocket.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPClient.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FTP\EditFtpNet\FTPControlSocket.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPDataSocket.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPException.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPFile.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPFileFactory.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPFileParser.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPPassiveDataSocket.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPReply.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPSemaphore.cs" />
+    <Compile Include="FTP\EditFtpNet\FTPTypes.cs" />
+    <Compile Include="FTP\EditFtpNet\HostNameResolver.cs" />
+    <Compile Include="FTP\EditFtpNet\IFileTransferClient.cs" />
+    <Compile Include="FTP\EditFtpNet\IFTPComponent.cs" />
+    <Compile Include="FTP\EditFtpNet\Level.cs" />
+    <Compile Include="FTP\EditFtpNet\Logger.cs" />
+    <Compile Include="FTP\EditFtpNet\LoggingLock.cs" />
+    <Compile Include="FTP\EditFtpNet\MemoryAppender.cs" />
+    <Compile Include="FTP\EditFtpNet\OS400FileParser.cs" />
+    <Compile Include="FTP\EditFtpNet\PathUtil.cs" />
+    <Compile Include="FTP\EditFtpNet\RollingFileAppender.cs" />
+    <Compile Include="FTP\EditFtpNet\ServerStrings.cs" />
+    <Compile Include="FTP\EditFtpNet\StandardOutputAppender.cs" />
+    <Compile Include="FTP\EditFtpNet\StringSplitter.cs" />
+    <Compile Include="FTP\EditFtpNet\TandemFileParser.cs" />
+    <Compile Include="FTP\EditFtpNet\TraceAppender.cs" />
+    <Compile Include="FTP\EditFtpNet\TransferCompleteStrings.cs" />
+    <Compile Include="FTP\EditFtpNet\UnixFileParser.cs" />
+    <Compile Include="FTP\EditFtpNet\VMSFileParser.cs" />
+    <Compile Include="FTP\EditFtpNet\WindowsFileParser.cs" />
+    <Compile Include="FTP\FtpByWebRequest\FtpResults\FtpResult.cs" />
+    <Compile Include="FTP\FtpByWebRequest\FtpResults\FtpResultLong.cs" />
+    <Compile Include="FTP\FtpByWebRequest\FtpResults\FtpResultStringArray.cs" />
+    <Compile Include="FTP\FtpByWebRequest\FtpWebRequestClient.cs" />
+    <Compile Include="FTP\FtpByWebRequest\FtpFileTransferEventArgs.cs" />
+    <Compile Include="FTP\IFtpClient.cs" />
+    <Compile Include="Http\HttpAgent.cs" />
+    <Compile Include="Http\HttpAgentRequestReceivedEventArgs.cs" />
+    <Compile Include="Monitoring\NetworkTrafficMonitor.cs" />
+    <Compile Include="Monitoring\NetworkMonitorEventArgs.cs" />
+    <Compile Include="NetworkDiscovery\NetworkDiscoveryService.cs" />
+    <Compile Include="NetworkDiscovery\UniversalNameINFO.cs" />
+    <Compile Include="NetworkDiscovery\ShareINFO2.cs" />
+    <Compile Include="NetworkDiscovery\ShareINFO1.cs" />
+    <Compile Include="NetworkDiscovery\ShareINFO1_9X.cs" />
+    <Compile Include="NetworkDiscovery\ShareINFO50.cs" />
+    <Compile Include="NetworkDiscovery\ServerInfo100.cs" />
+    <Compile Include="NetworkDiscovery\NetWorkBrowser.cs" />
+    <Compile Include="NetworkDiscovery\ShareCollection.cs" />
+    <Compile Include="NetworkDiscovery\Shares.cs" />
+    <Compile Include="RSS\RssHeader.cs" />
+    <Compile Include="RSS\RssItem.cs" />
+    <Compile Include="RSS\RssReader.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpCommunicatorForObject\AnignoTcpCommunicator.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpCommunicatorForObject\AnignoTcpListener.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpCommunicatorForObject\ByteQueueExt.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpClientServer\AnignoTcpClient.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpClientServer\AnignoTcpClientServerCommon.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpClientServer\AnignoTcpClientServerException.cs" />
+    <Compile Include="TcpCommunication\AnignoTcpClientServer\AnignoTcpServer.cs" />
+    <Compile Include="TimeSynchronize\NTPClient.cs" />
+    <Compile Include="TimeSynchronize\SYSTEMTIME.cs" />
+    <Compile Include="UdpCommunication\CommunicationBase\CommunicationMessage.cs" />
+    <Compile Include="UdpCommunication\CommunicationBase\CommunicatorBase.cs" />
+    <Compile Include="UdpCommunication\UdpAckCommunication\UdpAckCommunicator.cs" />
+    <Compile Include="UdpCommunication\UdpAckCommunication\UdpAckQueuedMessage.cs" />
+    <Compile Include="UdpCommunication\UdpCommunicator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnignoraCommonAndHelpers\AnignoraCommonAndHelpers.csproj">
+      <Project>{E5D8C6FC-B5A6-48D8-849D-86E2F8AA6527}</Project>
+      <Name>AnignoraCommonAndHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraDataTypes\AnignoraDataTypes.csproj">
+      <Project>{7B082431-65FB-4A04-9F43-051523D24DD6}</Project>
+      <Name>AnignoraDataTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="FTP\EditFtpNet\FTPConnection.resx">
+      <DependentUpon>FTPConnection.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

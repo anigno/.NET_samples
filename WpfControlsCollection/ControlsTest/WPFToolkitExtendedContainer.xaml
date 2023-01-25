@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ControlsTest.WPFToolkitExtendedContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" mc:Ignorable="d" 
+             d:DesignHeight="316" d:DesignWidth="468">
+    <Grid>
+        <xctk:Calculator Margin="42,12,276,34" />
+        <xctk:CalculatorUpDown Margin="198,12,202,274" />
+        <xctk:MaskedTextBox Margin="272,19,128,274" Mask="###-##" />
+    </Grid>
+</UserControl>

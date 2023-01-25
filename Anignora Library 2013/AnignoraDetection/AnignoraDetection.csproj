@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79C311AF-C80A-4A9B-9768-8C01910925BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnignoraDetection</RootNamespace>
+    <AssemblyName>AnignoraDetection</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\_Library\3rd Party\AForge\AForge.NET Framework-2.2.2\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\_Library\3rd Party\AForge\AForge.NET Framework-2.2.2\Release\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\..\_Library\3rd Party\AForge\AForge.NET Framework-2.2.2\Release\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera\Camera.cs" />
+    <Compile Include="CameraDetector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CameraDetector.Designer.cs">
+      <DependentUpon>CameraDetector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\CameraWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dshow\Core\IBaseFilter.cs" />
+    <Compile Include="dshow\Core\IBasicVideo.cs" />
+    <Compile Include="dshow\Core\ICreateDevEnum.cs" />
+    <Compile Include="dshow\Core\IEnumPins.cs" />
+    <Compile Include="dshow\Core\IFileSourceFilter.cs" />
+    <Compile Include="dshow\Core\IFilterGraph.cs" />
+    <Compile Include="dshow\Core\IGraphBuilder.cs" />
+    <Compile Include="dshow\Core\IMediaControl.cs" />
+    <Compile Include="dshow\Core\IMediaEvent.cs" />
+    <Compile Include="dshow\Core\IMediaPosition.cs" />
+    <Compile Include="dshow\Core\IMediaSeeking.cs" />
+    <Compile Include="dshow\Core\IPin.cs" />
+    <Compile Include="dshow\Core\IPropertyBag.cs" />
+    <Compile Include="dshow\Core\ISampleGrabber.cs" />
+    <Compile Include="dshow\Core\IVideoFrameStep.cs" />
+    <Compile Include="dshow\Core\IVideoWindow.cs" />
+    <Compile Include="dshow\Core\Structures.cs" />
+    <Compile Include="dshow\Core\Uuids.cs" />
+    <Compile Include="dshow\Core\Win32.cs" />
+    <Compile Include="dshow\Filter.cs" />
+    <Compile Include="dshow\FilterCollection.cs" />
+    <Compile Include="dshow\Tools.cs" />
+    <Compile Include="MotionDetectors\IMotionDetector.cs" />
+    <Compile Include="MotionDetectors\MotionDetector1.cs" />
+    <Compile Include="MotionDetectors\MotionDetector2.cs" />
+    <Compile Include="MotionDetectors\MotionDetector3.cs" />
+    <Compile Include="MotionDetectors\MotionDetector3Optimized.cs" />
+    <Compile Include="MotionDetectors\MotionDetector4.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vfw\AVIReader.cs" />
+    <Compile Include="vfw\AVIWriter.cs" />
+    <Compile Include="vfw\Win32.cs" />
+    <Compile Include="VideoSource\ByteArrayUtils.cs" />
+    <Compile Include="VideoSource\CameraEvents.cs" />
+    <Compile Include="VideoSource\CaptureDevice.cs" />
+    <Compile Include="VideoSource\IVideoSource.cs" />
+    <Compile Include="VideoSource\JPEGStream.cs" />
+    <Compile Include="VideoSource\MJPEGStream.cs" />
+    <Compile Include="VideoSource\VideoFileSource.cs" />
+    <Compile Include="VideoSource\VideoStream.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dshow\Core\1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CameraDetector.resx">
+      <DependentUpon>CameraDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\CameraWindow.resx">
+      <DependentUpon>CameraWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnignoraCommonAndHelpers\AnignoraCommonAndHelpers.csproj">
+      <Project>{E5D8C6FC-B5A6-48D8-849D-86E2F8AA6527}</Project>
+      <Name>AnignoraCommonAndHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraCommunication\AnignoraCommunication.csproj">
+      <Project>{5EDFAE95-D230-4B77-99D4-9FC5329FCAD5}</Project>
+      <Name>AnignoraCommunication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraUI\AnignoraUI.csproj">
+      <Project>{028AE9FE-91DE-4FFB-8DDD-030950DA80B9}</Project>
+      <Name>AnignoraUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

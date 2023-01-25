@@ -1,0 +1,10 @@
+﻿<Window x:Class="Anignora_Security_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Anignora_Security_System="clr-namespace:Anignora_Security_System"
+        xmlns:MotionDetection="clr-namespace:Anignora_Security_System.MotionDetection" Title="MainWindow" Height="660" Width="912" Closing="onWindowClosing">
+    <Grid>
+        <WrapPanel Height="535" HorizontalAlignment="Left" Margin="12,12,0,0" Name="wrapPanelCams" VerticalAlignment="Top" Width="702" />
+        <CheckBox Content="SaveImage" Height="22" HorizontalAlignment="Left" Margin="720,12,0,0" Name="checkBoxSaveImage" VerticalAlignment="Top" FontSize="14" Width="88" />
+    </Grid>
+</Window>

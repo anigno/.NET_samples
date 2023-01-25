@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD23AC56-A41A-41DA-8616-9CCBB0488087}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnignoraLibrary_2010_Tester</RootNamespace>
+    <AssemblyName>AnignoraLibrary_2010_Tester</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\3rd Party\NUnit 2.5.8 Dlls\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonVersion\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="CommunicationTests\TestHttp.cs" />
+    <Compile Include="ThreadSafePropertyTest.cs" />
+    <Compile Include="CommonTypesTests\CommonTypesTesting.cs" />
+    <Compile Include="ResourcesTest\MyResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesTest\ResourceTesting.cs" />
+    <Compile Include="TestBThreadPool\SampleAction.cs" />
+    <Compile Include="TestBThreadPool\TestingBThreadsPooling.cs" />
+    <Compile Include="FtpTests\TestFtpWebRequestClient.cs" />
+    <Compile Include="Hook tests\FormHookTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hook tests\FormHookTester.Designer.cs">
+      <DependentUpon>FormHookTester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hook tests\TestHook.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="CommunicationTests\RequestResponseTestMessages.cs" />
+    <Compile Include="CommunicationTests\TestCommunication.cs" />
+    <Compile Include="TestConfigurators.cs" />
+    <Compile Include="TestCrc32.cs" />
+    <Compile Include="TestHtmlReporting.cs" />
+    <Compile Include="TestLists.cs" />
+    <Compile Include="TestNetworkMonitoring.cs" />
+    <Compile Include="TestsHelper.cs" />
+    <Compile Include="ThreadsManagerTesting.cs" />
+    <Compile Include="UI Tests\FormConfigurationUiTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Tests\FormConfigurationUiTest.Designer.cs">
+      <DependentUpon>FormConfigurationUiTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Tests\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Tests\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Hook tests\FormHookTester.resx">
+      <DependentUpon>FormHookTester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ResourcesTest\MyResource.he-IL.resx" />
+    <EmbeddedResource Include="ResourcesTest\MyResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Tests\FormConfigurationUiTest.resx">
+      <DependentUpon>FormConfigurationUiTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Tests\FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnignoraCommonAndHelpers\AnignoraCommonAndHelpers.csproj">
+      <Project>{E5D8C6FC-B5A6-48D8-849D-86E2F8AA6527}</Project>
+      <Name>AnignoraCommonAndHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraCommunication\AnignoraCommunication.csproj">
+      <Project>{5EDFAE95-D230-4B77-99D4-9FC5329FCAD5}</Project>
+      <Name>AnignoraCommunication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraDataTypes\AnignoraDataTypes.csproj">
+      <Project>{7B082431-65FB-4A04-9F43-051523D24DD6}</Project>
+      <Name>AnignoraDataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraIO\AnignoraIO.csproj">
+      <Project>{146F3906-9908-4F11-9836-2A26584BB247}</Project>
+      <Name>AnignoraIO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraLoggingServices\AnignoraLoggingServices.csproj">
+      <Project>{69C5542F-A4B2-4094-99AD-ACE45CCD51A7}</Project>
+      <Name>AnignoraLoggingServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraMultimedia\AnignoraMultimedia.csproj">
+      <Project>{35BB660A-0C90-4C7A-AE84-FFF987995245}</Project>
+      <Name>AnignoraMultimedia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraProcesses\AnignoraProcesses.csproj">
+      <Project>{9CB4A2AD-D2BD-4CA2-B325-994DBA77D851}</Project>
+      <Name>AnignoraProcesses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnignoraUI\AnignoraUI.csproj">
+      <Project>{028AE9FE-91DE-4FFB-8DDD-030950DA80B9}</Project>
+      <Name>AnignoraUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

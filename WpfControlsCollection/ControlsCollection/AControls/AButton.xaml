@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+
+    <Style TargetType="Button">
+        <Setter Property="Template" Value="{DynamicResource AButtonControlTemplate}"/>
+    </Style>
+
+    <Color x:Key="BordersColor">Gray</Color>
+    <Color x:Key="BackgroundColor1">Black</Color>
+    <Color x:Key="BackgroundColor2">Gray</Color>
+    
+    <SolidColorBrush x:Key="BordersBrush" Color="{StaticResource BordersColor}"/>
+    <SolidColorBrush x:Key="BordersBrush2" Color="{StaticResource BackgroundColor2}"/>
+
+    <ControlTemplate x:Key="AButtonControlTemplate" TargetType="Button">
+        <Border Name="OuterBorder" BorderThickness="0.5" CornerRadius="6" Margin="0" BorderBrush="{StaticResource BordersBrush}">
+            <Border Name="InnerBorder" BorderThickness="0.5" BorderBrush="{StaticResource BordersBrush}" Padding="0" Margin="2" CornerRadius="4" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="{StaticResource BackgroundColor1}" Offset="1" />
+                        <GradientStop Color="{StaticResource BackgroundColor2}" Offset="0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Label Name="InnerLabel" Padding="0" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Margin="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            </Border>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="OuterBorder" Property="Background" Value="{StaticResource BordersBrush2}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="InnerLabel" Property="Margin" Value="2,2,0,0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

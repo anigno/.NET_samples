@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B082431-65FB-4A04-9F43-051523D24DD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnignoraDataTypes</RootNamespace>
+    <AssemblyName>AnignoraDataTypes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\3rd Party\Log4Net\1.2.10.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonVersion\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="CommonTypes\Time.cs" />
+    <Compile Include="Configurations\ConfiguratorBase.cs" />
+    <Compile Include="Configurations\ConfiguratorXml.cs" />
+    <Compile Include="Configurations\IConfiguration.cs" />
+    <Compile Include="DataManager\DataManager.cs" />
+    <Compile Include="DataManager\DataManagerContractBased.cs" />
+    <Compile Include="DataTypesExtensions.cs" />
+    <Compile Include="DataTypesHelper.cs" />
+    <Compile Include="DynamicArray.cs" />
+    <Compile Include="HtmlReporting\HtmlReporter.cs" />
+    <Compile Include="HtmlReporting\TagBr.cs" />
+    <Compile Include="HtmlReporting\TagAttribute.cs" />
+    <Compile Include="HtmlReporting\Tag.cs" />
+    <Compile Include="HtmlReporting\TagBody.cs" />
+    <Compile Include="HtmlReporting\TagHead.cs" />
+    <Compile Include="HtmlReporting\TagHtml.cs" />
+    <Compile Include="HtmlReporting\TagMeta.cs" />
+    <Compile Include="HtmlReporting\TagTable.cs" />
+    <Compile Include="HtmlReporting\TagTd.cs" />
+    <Compile Include="HtmlReporting\TagTitle.cs" />
+    <Compile Include="HtmlReporting\TagTr.cs" />
+    <Compile Include="Lists\ListFiltered.cs" />
+    <Compile Include="Lists\ListFilteredEventArgs.cs" />
+    <Compile Include="QueueCircularDynamic.cs" />
+    <Compile Include="QueueThreaded.cs" />
+    <Compile Include="StateMachines\AState.cs" />
+    <Compile Include="StateMachines\AStateMachine.cs" />
+    <Compile Include="StringConverters\StringSemiColonDeviderArrayConverter.cs" />
+    <Compile Include="StringConverters\TimeStringConverter.cs" />
+    <Compile Include="Trees\AVLTrees\AVLTree.cs" />
+    <Compile Include="Trees\AVLTrees\BinaryTree.cs" />
+    <Compile Include="Trees\AVLTrees\TreesUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
