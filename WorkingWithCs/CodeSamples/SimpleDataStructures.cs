@@ -11,10 +11,10 @@ namespace CodeSamples
 {
     internal class SimpleDataStructures
     {
-        public static void PrintKeyValues(IEnumerable<KeyValuePair<int, int>> iEnumerable, string comment = "")
+        public static void PrintKeyValues(IEnumerable<KeyValuePair<int, int>> enumerableKeyValues, string comment = "")
         {
 
-            foreach (KeyValuePair<int, int> kvp in iEnumerable) Console.Write($"{kvp.Key}:{kvp.Value} ");
+            foreach (KeyValuePair<int, int> kvp in enumerableKeyValues) Console.Write($"{kvp.Key}:{kvp.Value} ");
             Console.Write($" :{comment}");
             Console.WriteLine();
         }
@@ -34,7 +34,7 @@ namespace CodeSamples
         {
             Dictionary<int, int> dict = new Dictionary<int, int>();
             dict.Add(1, 10);
-            try { dict.Add(1, 0); } catch (Exception) { Console.WriteLine("cand add existing key"); }
+            try { dict.Add(1, 0); } catch (Exception) { Console.WriteLine("can't add existing key"); }
             dict[2] = 20;
             bool b = dict.TryAdd(3, 30); // add
             PrintKeyValues(dict, "added values");
@@ -90,6 +90,7 @@ namespace CodeSamples
             Console.WriteLine($"{stk.ElementAt(3)} stk element at 3");
             Console.WriteLine($"{que.ElementAt(3)} que element at 3");
             Console.WriteLine("stk contains 4 "+stk.Contains(4));
+            
 
             var set=new HashSet<int>();
             set.Add(3);

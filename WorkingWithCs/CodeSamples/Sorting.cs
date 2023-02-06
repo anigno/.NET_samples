@@ -15,7 +15,7 @@ namespace CodeSamples
 
     internal class Sorting
     {
-        public static ListNode BuildList(int[] vals)
+        public static ListNode BuildLinkedList(int[] vals)
         {
             ListNode head = new ListNode();
             head.val = vals[0];

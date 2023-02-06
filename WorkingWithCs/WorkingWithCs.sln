@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameOfLife", "GameOfLife\Ga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSamples", "CodeSamples\CodeSamples.csproj", "{75E2DD16-48D3-4A0C-AAF0-9E9DBDE45DA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSimple", "WpfSimple\WpfSimple.csproj", "{8597DBA1-9BD4-4E85-949F-CB2352373711}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WfpCarRental", "WfpCarRental\WfpCarRental.csproj", "{FAB49F57-5219-45BA-BA7F-85C628EB7B4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfSimple", "WpfSimple\WpfSimple.csproj", "{8597DBA1-9BD4-4E85-949F-CB2352373711}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{8597DBA1-9BD4-4E85-949F-CB2352373711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8597DBA1-9BD4-4E85-949F-CB2352373711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8597DBA1-9BD4-4E85-949F-CB2352373711}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAB49F57-5219-45BA-BA7F-85C628EB7B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAB49F57-5219-45BA-BA7F-85C628EB7B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAB49F57-5219-45BA-BA7F-85C628EB7B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAB49F57-5219-45BA-BA7F-85C628EB7B4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
