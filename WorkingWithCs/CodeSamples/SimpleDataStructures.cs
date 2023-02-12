@@ -11,30 +11,42 @@ namespace CodeSamples
 {
     internal class SimpleDataStructures
     {
+
+        /// <summary>print values from enumerable to console</summary>
+        public static void PrintEnumerable(IEnumerable enumerable, string comment = "")
+        {
+            foreach (object o in enumerable)
+            {
+                Console.Write($"{o.ToString()} ");
+            }
+            Console.Write($" :{comment}");
+            Console.WriteLine();
+
+        }
+        /// <summary>print key value pairs (e.g. dictionary) to console</summary>
         public static void PrintKeyValues(IEnumerable<KeyValuePair<int, int>> enumerableKeyValues, string comment = "")
         {
+            /// <summary>
+            /// Method <c>Draw</c> renders the point.
+            /// </summary>
 
             foreach (KeyValuePair<int, int> kvp in enumerableKeyValues) Console.Write($"{kvp.Key}:{kvp.Value} ");
             Console.Write($" :{comment}");
             Console.WriteLine();
         }
 
-        public static void PrintEnumerable(IEnumerable enumerable, string comment = "")
-        {
-            foreach (object o in enumerable)
-            {
-                Console.Write($"{o.ToString()} ");
-             }
-            Console.Write($" :{comment}");
-            Console.WriteLine();
-
-        }
-
         public void TestDictionary()
         {
             Dictionary<int, int> dict = new Dictionary<int, int>();
             dict.Add(1, 10);
-            try { dict.Add(1, 0); } catch (Exception) { Console.WriteLine("can't add existing key"); }
+            try
+            {
+                dict.Add(key:1,value: 0);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("can't add existing key");
+            }
             dict[2] = 20;
             bool b = dict.TryAdd(3, 30); // add
             PrintKeyValues(dict, "added values");
@@ -58,14 +70,6 @@ namespace CodeSamples
             sdict[6] = 60;
             PrintKeyValues(sdict, "added 5,4,6");
         }
-
-        class ComparerInt : IComparer<int>
-        {
-            public int Compare(int x, int y)
-            {
-                return y - x;
-            }
-        }
         public void TestSortedList()
         {
             SortedList<int, int> slist = new SortedList<int, int>(new ComparerInt());
@@ -85,19 +89,27 @@ namespace CodeSamples
                 que.Enqueue(a);
             }
             Console.WriteLine("enter 0->5");
-            PrintEnumerable(stk,"stack");
-            PrintEnumerable(que,"queue");
+            PrintEnumerable(stk, "stack");
+            PrintEnumerable(que, "queue");
             Console.WriteLine($"{stk.ElementAt(3)} stk element at 3");
             Console.WriteLine($"{que.ElementAt(3)} que element at 3");
-            Console.WriteLine("stk contains 4 "+stk.Contains(4));
-            
+            Console.WriteLine("stk contains 4 " + stk.Contains(4));
 
-            var set=new HashSet<int>();
+
+            var set = new HashSet<int>();
             set.Add(3);
             set.Add(4);
             set.Add(4);
             PrintEnumerable(set, "set of 3,4,4");
 
+        }
+
+        class ComparerInt : IComparer<int>
+        {
+            public int Compare(int x, int y)
+            {
+                return y - x;
+            }
         }
     }
 }
