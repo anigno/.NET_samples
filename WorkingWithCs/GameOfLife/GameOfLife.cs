@@ -11,9 +11,7 @@
             InitWorldZero(livingCoords);
         }
 
-        /// <summary>
-        /// runs the game of life
-        /// </summary>
+        /// <summary>runs the game of life</summary>
         /// <param name="generations">number of generation to run</param>
         public void Run(int generations)
         {

@@ -3,9 +3,9 @@ using CodeSamples.oop;
 
 //ArraysSamples a = new ArraysSamples();
 
-Car car = new Car(160, "123456", "BMW", CarTypeEnum.Sedan);
-car.Move(120);
-Console.WriteLine(car);
+//Car car = new Car(160, "123456", "BMW", CarTypeEnum.Sedan);
+//car.Move(120);
+//Console.WriteLine(car);
 
 //Samples sam = new Samples();
 //Samples.RunExceptions(0);
