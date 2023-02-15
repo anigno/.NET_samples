@@ -12,13 +12,9 @@ namespace LoggingProvider
 {
     public class LoggingInitiator
     {
-        //private static readonly ILog log = LogManager.GetLogger("main_logger");
-
         public LoggingInitiator(string logsPath)
         {
-            var patternLayout = new PatternLayout();
-            patternLayout.ConversionPattern = "$%d|%t|%p|%c|%m%n";
-            var layout = new PatternLayout();
+            var patternLayout = new PatternLayout() { ConversionPattern = "$%d|%t|%p|%c|%m%n" };
             patternLayout.ActivateOptions();
             var fileName = string.Format($"{logsPath}/log/log.txt_{DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss")}");
 
@@ -36,22 +32,6 @@ namespace LoggingProvider
             rollingFileAppender.ActivateOptions();
             BasicConfigurator.Configure(rollingFileAppender);
         }
-    }
-
-    public class CustomRollingFileAppender : RollingFileAppender
-    {
-        protected override void OpenFile(string fileName, bool append)
-        {
-            lock (this)
-            {
-                base.OpenFile(fileName, append);
-            }
-        }
-        protected override void PrepareWriter()
-        {
-            base.PrepareWriter();
-        }
-        
     }
 }
 

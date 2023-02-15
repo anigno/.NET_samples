@@ -1,67 +1,19 @@
-﻿#region Assembly log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a
-// D:\DEV\GIT\github-.NET\AnignoraLibrary\packages\log4net.2.0.15\lib\net45\log4net.dll
+﻿// D:\DEV\GIT\github-.NET\AnignoraLibrary\packages\log4net.2.0.15\lib\net45\log4net.dll
 // Decompiled with ICSharpCode.Decompiler 7.1.0.6543
-#endregion
 
 using System;
 using System.Collections;
 using System.Globalization;
 using System.IO;
 using System.Threading;
+using log4net.Appender;
 using log4net.Core;
 using log4net.Util;
 using LoggingProvider;
 
 namespace LoggingInitiator
 {
-    //
-    // Summary:
-    //     Appender that rolls log files based on size or date or both.
-    //
-    // Remarks:
-    //     RollingFileAppender can roll log files based on size or date or both depending
-    //     on the setting of the log4net.Appender.RollingFileAppender.RollingStyle property.
-    //     When set to log4net.Appender.RollingFileAppender.RollingMode.Size the log file
-    //     will be rolled once its size exceeds the log4net.Appender.RollingFileAppender.MaximumFileSize.
-    //     When set to log4net.Appender.RollingFileAppender.RollingMode.Date the log file
-    //     will be rolled once the date boundary specified in the log4net.Appender.RollingFileAppender.DatePattern
-    //     property is crossed. When set to log4net.Appender.RollingFileAppender.RollingMode.Composite
-    //     the log file will be rolled once the date boundary specified in the log4net.Appender.RollingFileAppender.DatePattern
-    //     property is crossed, but within a date boundary the file will also be rolled
-    //     once its size exceeds the log4net.Appender.RollingFileAppender.MaximumFileSize.
-    //     When set to log4net.Appender.RollingFileAppender.RollingMode.Once the log file
-    //     will be rolled when the appender is configured. This effectively means that the
-    //     log file can be rolled once per program execution.
-    //     A of few additional optional features have been added:
-    //     • Attach date pattern for current log file log4net.Appender.RollingFileAppender.StaticLogFileName
-    //     • Backup number increments for newer files log4net.Appender.RollingFileAppender.CountDirection
-    //     • Infinite number of backups by file size log4net.Appender.RollingFileAppender.MaxSizeRollBackups
-    //     For large or infinite numbers of backup files a log4net.Appender.RollingFileAppender.CountDirection
-    //     greater than zero is highly recommended, otherwise all the backup files need
-    //     to be renamed each time a new backup is created.
-    //     When Date/Time based rolling is used setting log4net.Appender.RollingFileAppender.StaticLogFileName
-    //     to true will reduce the number of file renamings to few or none.
-    //     Changing log4net.Appender.RollingFileAppender.StaticLogFileName or log4net.Appender.RollingFileAppender.CountDirection
-    //     without clearing the log file directory of backup files will cause unexpected
-    //     and unwanted side effects.
-    //     If Date/Time based rolling is enabled this appender will attempt to roll existing
-    //     files in the directory without a Date/Time tag based on the last write date of
-    //     the base log file. The appender only rolls the log file when a message is logged.
-    //     If Date/Time based rolling is enabled then the appender will not roll the log
-    //     file at the Date/Time boundary but at the point when the next message is logged
-    //     after the boundary has been crossed.
-    //     The log4net.Appender.RollingFileAppender extends the log4net.Appender.FileAppender
-    //     and has the same behavior when opening the log file. The appender will first
-    //     try to open the file for writing when log4net.Appender.RollingFileAppender.ActivateOptions
-    //     is called. This will typically be during configuration. If the file cannot be
-    //     opened for writing the appender will attempt to open the file again each time
-    //     a message is logged to the appender. If the file cannot be opened for writing
-    //     when a message is logged then the message will be discarded by this appender.
-    //     When rolling a backup file necessitates deleting an older backup file the file
-    //     to be deleted is moved to a temporary name before being deleted.
-    //     A maximum number of backup files when rolling on date/time boundaries is not
-    //     supported.
-    public class RollingFileAppenderStartWithOne : FileAppenderExtended
+    public class RollingFileAppenderStartWithOne : FileAppender
     {
         //
         // Summary:
@@ -1076,7 +1028,7 @@ namespace LoggingInitiator
 
             using (base.SecurityContext.Impersonate(this))
             {
-                base.File = FileAppenderExtended.ConvertToFullPath(base.File.Trim());
+                base.File = FileAppender.ConvertToFullPath(base.File.Trim());
                 m_baseFileName = base.File;
             }
 
