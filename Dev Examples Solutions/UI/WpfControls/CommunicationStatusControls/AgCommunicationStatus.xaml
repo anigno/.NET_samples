@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="WpfControls.CommunicationStatusControls.AgCommunicationStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfControls="clr-namespace:WpfControls.CommunicationStatusControls"
+             xmlns:converters="clr-namespace:WpfControls.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="90" d:DataContext="{d:DesignInstance wpfControls:AgCommunicationStatus}" MinWidth="90" MinHeight="30">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="FaceBrush" EndPoint="0,0" StartPoint="1,1">
+            <GradientStop Color="#ff222222" Offset="0"/>
+            <GradientStop Color="#ff555555" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="CommunicationReceivedBrush" EndPoint="0,0" StartPoint="1,1">
+            <GradientStop Color="#FF4467FF" Offset="0"/>
+            <GradientStop Color="#FF4467FF" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="ConnectedBrush" EndPoint="0,0" StartPoint="1,1">
+            <GradientStop Color="#FF90EE90" Offset="0"/>
+            <GradientStop Color="#FF90EE90" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="DisconnectedBrush" EndPoint="0,0" StartPoint="1,1">
+            <GradientStop Color="#FFFB6C6C" Offset="0"/>
+            <GradientStop Color="#FFFF4D4D" Offset="1"/>
+        </LinearGradientBrush>
+
+        <converters:BoolToBrushConverter x:Key="BoolToConnectionStatusBrushConverter" FalseValue="{StaticResource DisconnectedBrush}" TrueValue="{StaticResource ConnectedBrush}"/>
+        <converters:BoolToBrushConverter x:Key="BoolToCommunicationStatusBrushConverter" FalseValue="{StaticResource FaceBrush}" TrueValue="{StaticResource CommunicationReceivedBrush}"/>
+        <converters:BoolToStringConverter x:Key="BoolToConnectionStatusStringConverter" FalseValue="Disconnected" TrueValue="Connected"/>
+
+
+    </UserControl.Resources>
+    <Grid>
+        <Border BorderBrush="DarkGray" BorderThickness="1" Padding="3" CornerRadius="4" 
+                Background="{Binding CommunicationStatus, RelativeSource={RelativeSource AncestorType={x:Type wpfControls:AgCommunicationStatus}}, Converter={StaticResource BoolToCommunicationStatusBrushConverter}}">
+            <Border CornerRadius="4" BorderBrush="DarkGray" BorderThickness="1" Background="{DynamicResource FaceBrush}">
+                <Label 
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="13"
+                    Content="{Binding ConnectionStatus, RelativeSource={RelativeSource AncestorType={x:Type wpfControls:AgCommunicationStatus}}, Converter={StaticResource BoolToConnectionStatusStringConverter}}"  
+                    Foreground="{Binding ConnectionStatus, RelativeSource={RelativeSource AncestorType={x:Type wpfControls:AgCommunicationStatus}}, Converter={StaticResource BoolToConnectionStatusBrushConverter}}" Margin="0,-2,0,2" />
+            </Border>
+        </Border>
+
+    </Grid>
+</UserControl>

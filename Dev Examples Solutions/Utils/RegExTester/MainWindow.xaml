@@ -1,0 +1,17 @@
+﻿<Window x:Class="RegExTester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RegEx Tester" Height="350" Width="525" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox Name="TextBlockRegEx" HorizontalAlignment="Left" Margin="99,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="408" Background="#FFF1F1F1" TextChanged="TextBlockRegEx_TextChanged"  />
+        <Label Content="RegEx Pattern" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Source" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="123" Margin="61,41,0,0" VerticalAlignment="Top" Width="446">
+            <TextBox Name="TextBlockSource" TextWrapping="Wrap" Text="" Background="#FFE6E6E6" TextChanged="TextBlockSource_TextChanged"/>
+        </ScrollViewer>
+        <ListBox Name="ListBoxResults" HorizontalAlignment="Left" Height="137" Margin="61,169,0,0" VerticalAlignment="Top" Width="295"/>
+        <Label Content="Results" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top"/>
+        <Button Name="ButtonMatch" Content="Match" HorizontalAlignment="Left" Margin="361,169,0,0" VerticalAlignment="Top" Width="75" Click="ButtonMatch_Click"/>
+
+    </Grid>
+</Window>

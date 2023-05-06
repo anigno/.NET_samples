@@ -1,0 +1,12 @@
+﻿<Application x:Class="MvvmPatternExample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             >
+    <!--
+    Removed the (StartupUri="MainWindow.xaml") element, We will set an explicit application starting in App ctor
+    -->
+
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

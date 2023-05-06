@@ -1,0 +1,83 @@
+﻿<Window x:Class="ConverterExamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:ConverterExamples.Converters"
+        xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:data="clr-namespace:ConverterExamples"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" d:DataContext="{d:DesignInstance data:MainWindow}">
+    <Window.Resources>
+
+        <!--Converters-->
+        <converters:MultiValuesConverter x:Key="MultiValuesConverter"/>
+
+        <converters:BoolToStringWithDataResourceParameterConverter x:Key="BoolToStringWithDataResourceParameterConverter"/>
+        <data:DataResource x:Key="DataResourceTextBoxTrueValue" BindingTarget="{Binding ElementName=TextBoxTrueValue,Path=Text}"/>
+
+        <converters:StringToBitmapImageConverter x:Key="StringToImageConverter" DirectoryPath="Resources"/>
+        <converters:BoolToBrushConverter x:Key="BoolToBrushConverter" FalseValue="Red" TrueValue="Green"/>
+        <converters:EnumIntToStringConverterWithParams x:Key="EnumIntToStringConverterWithParams"/>
+
+        <converters:EnumIntToStringConverter x:Key="ConnectivityEnumToStringConverter">
+            <converters:EnumIntToStringConverter.StringValues>
+                <x:Array Type="system:String">
+                    <system:String>Unknown Connectivity String</system:String>
+                    <system:String>Not Connected String</system:String>
+                    <system:String>Connected String</system:String>
+                </x:Array>
+            </converters:EnumIntToStringConverter.StringValues>
+        </converters:EnumIntToStringConverter>
+        <!--Enums-->
+        <ObjectDataProvider x:Key="ConnectivityStatusEnum" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="data:ConnectivityStatusEnum"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+
+    </Window.Resources>
+    <Grid>
+        <StackPanel Height="78" HorizontalAlignment="Left" Margin="12,12,0,0" VerticalAlignment="Top" Width="181">
+            <ComboBox Name="ComboBoxConnectivityEnums" ItemsSource="{Binding Source={StaticResource ConnectivityStatusEnum}}" SelectedIndex="0" Height="23" />
+            <TextBlock Text="{Binding ElementName=ComboBoxConnectivityEnums,Path=SelectedValue,Converter={StaticResource ConnectivityEnumToStringConverter}}" Height="23" />
+            <TextBlock Height="23">
+                <TextBlock.Text>
+                    <Binding ElementName="ComboBoxConnectivityEnums" Path="SelectedValue" Converter="{StaticResource EnumIntToStringConverterWithParams}">
+                        <Binding.ConverterParameter>
+                            <x:Array Type="system:String">
+                                <system:String>Unknown Connectivity Param</system:String>
+                                <system:String>Not Connected Param</system:String>
+                                <system:String>ConnectedParam</system:String>
+                            </x:Array>
+                        </Binding.ConverterParameter>
+                    </Binding>
+                </TextBlock.Text></TextBlock>
+        </StackPanel>
+        <StackPanel Height="57" HorizontalAlignment="Left" Margin="199,12,0,0" VerticalAlignment="Top" Width="92">
+            <CheckBox Content="CheckBox" Height="23" Name="CheckBoxBoolSource" />
+            <TextBlock Height="23" 
+                       Text="{Binding ElementName=CheckBoxBoolSource,Path=IsChecked,UpdateSourceTrigger=PropertyChanged}" 
+                       Foreground="{Binding ElementName=CheckBoxBoolSource,Path=IsChecked,Converter={StaticResource BoolToBrushConverter}}"/>
+        </StackPanel>
+        <Image Source="{Binding MyImage,Converter={StaticResource StringToImageConverter}}" HorizontalAlignment="Left" Height="100" Margin="107,182,0,0" VerticalAlignment="Top" Width="100"/>
+        <StackPanel Margin="12,90,159,165">
+            <CheckBox Content="Select" x:Name="CheckBoxSelect"/>
+            <TextBox x:Name="TextBoxTrueValue" Text="Some True text"/>
+            <!--Error-->
+            <!--<Label Content="{Binding ElementName=CheckBoxSelect,Path=IsChecked,Converter={StaticResource BoolToStringSpecialConverter},ConverterParameter={Binding ElementName=TextBoxTrueValue,Path= Text}}"/>-->
+            <Label Content="{Binding ElementName=CheckBoxSelect,Path=IsChecked,Converter={StaticResource BoolToStringWithDataResourceParameterConverter},ConverterParameter= {StaticResource DataResourceTextBoxTrueValue}}"/>
+        </StackPanel>
+        <StackPanel Height="100" Margin="10,160,333,60">
+            <CheckBox x:Name="CheckBox2"/>
+            <TextBox x:Name="TextBox2"/>
+            <Label >
+                <Label.Content>
+                    <MultiBinding Converter="{StaticResource  MultiValuesConverter}">
+                        <Binding ElementName="CheckBox2" Path="IsChecked"/>
+                        <Binding ElementName="TextBox2" Path="Text"/>
+                    </MultiBinding>
+                </Label.Content>
+            </Label>
+        </StackPanel>
+    </Grid>
+</Window>

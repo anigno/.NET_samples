@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WpfTreeViewExamples.Controls.ucHierarchicalDataTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc ="clr-namespace:WpfTreeViewExamples.Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"  Loaded="UserControl_Loaded">
+    <Grid>
+
+        <TreeView Name="tvMain">
+            <TreeView.Resources>
+
+                <HierarchicalDataTemplate DataType="{x:Type loc:WorldArea}" ItemsSource="{Binding Path=Countries}">
+                    <Border Width="150" BorderBrush="RoyalBlue" Background="RoyalBlue"  BorderThickness="1" CornerRadius="2" Margin="2" Padding="2" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock  Text="{Binding Path=Name}" FontWeight="Bold" Foreground="White" />
+                        </StackPanel>
+                    </Border>
+                </HierarchicalDataTemplate>
+                
+                <HierarchicalDataTemplate DataType="{x:Type loc:Country}">
+                    <Border Width="132"  Background="LightBlue" CornerRadius="2" Margin="1" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="26" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Margin="2"  Text="{Binding Path=Name}" />
+
+                            <Image Grid.Column="1" Margin="2" Source="{Binding Path=ImageUrl}" />
+                        </Grid>
+                    </Border>
+                </HierarchicalDataTemplate>
+
+            </TreeView.Resources>
+
+        </TreeView>
+
+    </Grid>
+</UserControl>

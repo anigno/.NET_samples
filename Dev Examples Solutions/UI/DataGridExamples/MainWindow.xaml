@@ -1,0 +1,96 @@
+﻿<Window x:Class="DataGridExamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:DataGridExamples.Converters"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dataGridExamples="clr-namespace:DataGridExamples" xmlns:data="clr-namespace:DataGridExamples.Data"
+        xmlns:core="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="468" Width="758" 
+        d:DataContext="{d:DesignInstance dataGridExamples:MainWindow}">
+    <Window.Resources>
+        <!--Converters-->
+        <converters:StatusEnumToBitmapImageConverter x:Key="StatusEnumToBitmapImageConverter"/>
+        <converters:StatusEnumToBitmapImageByFileConverter x:Key="StatusEnumToBitmapFileConverter" ImagesPath="Resources"/>
+        <converters:DateTimeToFormatedTimeConverter x:Key="FullDateTimeConverter" Format="dd/MM/yyy hh:mm:ss.fff"/>
+        <converters:DateTimeToFormatedTimeConverter x:Key="ShortDateConverter" Format="d/M/y"/>
+        <converters:StatusEnumToSolidColorBrushConverter x:Key="StatusEnumToSolidColorBrushConverter"/>
+        <!--Enums-->
+        <ObjectDataProvider x:Key="StatusEnum" MethodName="GetValues" ObjectType="{x:Type core:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="data:StatusEnum"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" Height="337" HorizontalAlignment="Left" Margin="30,12,0,0" VerticalAlignment="Top" Width="662"
+                  ItemsSource="{Binding CarsData}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=UpdateTime,Converter={StaticResource ShortDateConverter}}" Header="UpdateTime" />
+                <DataGridTextColumn Binding="{Binding Path=PlateNumber}" Header="PlateNumber" />
+                <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Bmw">
+                                    <Setter Property="Foreground" Value="LightBlue"/>
+                                </Trigger>
+                                <Trigger Property="Text" Value="Subaru">
+                                    <Setter Property="Foreground" Value="LightGreen"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridComboBoxColumn Header="Status" ItemsSource="{Binding Source={StaticResource StatusEnum}}" SelectedItemBinding="{Binding Status}">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Setter Property="Foreground" Value="{Binding Status,Converter={StaticResource StatusEnumToSolidColorBrushConverter}}"/>
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                </DataGridComboBoxColumn>
+                <DataGridTemplateColumn Header="Color">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate DataType="data:CarData">
+                            <Border BorderThickness="1" BorderBrush="Yellow" MinWidth="30" MinHeight="15">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Path=BodyColor}"/>
+                                </Border.Background>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn Binding="{Binding Path=Readiness,UpdateSourceTrigger=PropertyChanged}" Header="Readiness">
+                    <DataGridCheckBoxColumn.ElementStyle>
+                        <Style TargetType="{x:Type ToggleButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Readiness}" Value="false">
+                                    <Setter Property="Background" Value="Red"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Readiness}" Value="true">
+                                    <Setter Property="Background" Value="Green"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                            <EventSetter Event="CheckBox.Checked" Handler="OnReadinessCheckedChanged"/>
+                            <EventSetter Event="CheckBox.Unchecked" Handler="OnReadinessCheckedChanged"/>
+                        </Style>
+                    </DataGridCheckBoxColumn.ElementStyle>
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding="{Binding Path=ClientId}" Header="ClientId">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}"/>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Header="Image" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate DataType="data:CarData">
+                            <!--<Image Source="{Binding Status ,Converter={StaticResource StatusEnumToBitmapFileConverter}}" Width="30" Height="30"/>-->
+                            <Image Source="{Binding Status ,Converter={StaticResource StatusEnumToBitmapImageConverter}}" Width="30" Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

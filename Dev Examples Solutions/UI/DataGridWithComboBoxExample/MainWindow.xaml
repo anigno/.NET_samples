@@ -1,0 +1,53 @@
+﻿<Window x:Class="DataGridWithComboBoxExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dataGridWithComboBoxExample="clr-namespace:DataGridWithComboBoxExample"
+        xmlns:converters="clr-namespace:DataGridWithComboBoxExample.Converters" mc:Ignorable="d"
+        Title="DataGrid with ComboBox test" Height="350" Width="525" 
+        d:DataContext="{d:DesignInstance dataGridWithComboBoxExample:MainWindow}">
+    <Window.Resources>
+        <dataGridWithComboBoxExample:BrendEnums x:Key="BrendEnums"/>
+        <dataGridWithComboBoxExample:YearsDictionaryResource x:Key="YearsDictionaryResource"/>
+        <converters:YearToKeyValueConverter x:Key="YearToKeyValueConverter"/>
+        <converters:YearToYearStringConverter x:Key="YearToYearStringConverter"/>
+
+    </Window.Resources>
+
+    <Grid>
+        <DataGrid ItemsSource="{Binding CarDataCollection}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="228" Margin="73,49,0,0" VerticalAlignment="Top" Width="371">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="License Number"
+                    Binding="{Binding LicenseNumber}"
+                    />
+                <DataGridComboBoxColumn 
+                    Header="Brend"
+                    SelectedItemBinding="{Binding Brend}" 
+                    ItemsSource="{StaticResource BrendEnums}"
+                    />
+                <DataGridTemplateColumn
+                    Header="Year" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Year}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox 
+                                Height="22" 
+                                ItemsSource="{StaticResource YearsDictionaryResource}"
+                                SelectedItem="{Binding Year,Mode=TwoWay,Converter={StaticResource YearToKeyValueConverter}}"
+                                SelectedValuePath="Key"
+                                DisplayMemberPath="Value" 
+                                />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
