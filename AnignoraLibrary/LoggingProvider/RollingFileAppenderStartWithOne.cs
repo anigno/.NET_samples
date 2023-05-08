@@ -1,5 +1,4 @@
-﻿// D:\DEV\GIT\github-.NET\AnignoraLibrary\packages\log4net.2.0.15\lib\net45\log4net.dll
-// Decompiled with ICSharpCode.Decompiler 7.1.0.6543
+﻿// coppied from: log4net.2.0.15\lib\net45\log4net.dll
 
 using System;
 using System.Collections;
@@ -11,7 +10,7 @@ using log4net.Core;
 using log4net.Util;
 using LoggingProvider;
 
-namespace LoggingInitiator
+namespace LoggingProvider
 {
     public class RollingFileAppenderStartWithOne : FileAppender
     {
