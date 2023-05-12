@@ -1,15 +1,12 @@
 ﻿using log4net;
-using LoggingProvider;
+//using LoggingProvider;
 namespace TestMaui;
 
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
-    {// Must run once at app start
-        new LoggingProvider.LoggingInitiator(logsPath: "d:/dev/logs", isUseConsole: true);
-        ILog logger = LogManager.GetLogger("main_logger");
-        logger.Info("Init app");
-        var builder = MauiApp.CreateBuilder();
+    {
+         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>

@@ -1,4 +1,6 @@
-﻿namespace TestMaui;
+﻿using log4net;
+
+namespace TestMaui;
 
 public partial class MainPage : ContentPage
 {
@@ -7,18 +9,24 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+		BindingContext=new MainPageViewModel();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	private void AddClicked(object sender, EventArgs e)
 	{
 		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+	}
+	private void UpdateClicked(object sender, EventArgs e)
+	{
+		count++;
+	}
+	private void DeleteClicked(object sender, EventArgs e)
+	{
+		count++;
+	}
+	private void PasswordSelected(object sender, EventArgs e)
+	{
+		count++;
 	}
 }
 

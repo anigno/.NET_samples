@@ -3,39 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestMaui.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+    <StackLayout>
+        <Label Text="Password Manager" FontSize="Large" Margin="10"/>
+        
+        <StackLayout Orientation="Horizontal" Margin="10">
+            <Label Text="Password:" VerticalOptions="CenterAndExpand"/>
+            <Entry Text="{Binding Password, Mode=TwoWay}" IsPassword="True" >
+                <Entry.Behaviors>
+                    <local:TextChangedBehavior Command="{Binding PasswordChangedCommand}" />
+                </Entry.Behaviors>
+            </Entry>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" Margin="10">
+            <Button Text="Add" Clicked="AddClicked"/>
+            <Button Text="Update" Clicked="UpdateClicked"/>
+            <Button Text="Delete" Clicked="DeleteClicked"/>
+        </StackLayout>
+        <ListView x:Name="PasswordsListView" Margin="10" ItemSelected="PasswordSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Password}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+   
 
 </ContentPage>

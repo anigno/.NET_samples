@@ -20,13 +20,14 @@ namespace WpfSimple
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly MainWindowViewModel _viewModel = new MainWindowViewModel();
+        readonly MainWindowViewModel viewModel = new MainWindowViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
             //set the view model fo this view
-            DataContext = _viewModel;
+            DataContext = viewModel;
+
         }
     }
 }

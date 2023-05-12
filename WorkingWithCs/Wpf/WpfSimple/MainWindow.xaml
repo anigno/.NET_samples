@@ -13,11 +13,12 @@
     <!--d:DataContext is set for dev only causes, it lets the xaml know the context for easy coding-->
     <Grid>
         <StackPanel Width="200" Orientation="Vertical">
-            <Label Background="AntiqueWhite" Content="{Binding Time}" />
-            <Label Background="AntiqueWhite" Content="Id" />
-            <TextBox Background="AliceBlue" Text="{Binding Id}" />
-            <Label Background="AntiqueWhite" Content="Name" />
-            <TextBox Background="AliceBlue" Text="{Binding Name}" />
+            <StackPanel Orientation="Horizontal">
+                <Label Background="AliceBlue" Content="Name" />
+                <TextBox Background="AliceBlue" Text="{Binding Name}" Width="100"/>
+            </StackPanel>
+            <Label Background="GreenYellow" Content="{Binding Time}" />
+
             <Button
                 Width="50"
                 Command="{Binding OkButton}"
