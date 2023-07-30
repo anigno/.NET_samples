@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{B9989964-17D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfSimple", "Wpf\WpfSimple\WpfSimple.csproj", "{BDD1CDA2-99E2-4AD7-A4DC-E11652021499}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WfpCarRental", "Wpf\WfpCarRental\WfpCarRental.csproj", "{57DC6E18-20BF-4B36-8981-8A8123064197}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,17 +29,12 @@ Global
 		{BDD1CDA2-99E2-4AD7-A4DC-E11652021499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDD1CDA2-99E2-4AD7-A4DC-E11652021499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDD1CDA2-99E2-4AD7-A4DC-E11652021499}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57DC6E18-20BF-4B36-8981-8A8123064197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57DC6E18-20BF-4B36-8981-8A8123064197}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57DC6E18-20BF-4B36-8981-8A8123064197}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57DC6E18-20BF-4B36-8981-8A8123064197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BDD1CDA2-99E2-4AD7-A4DC-E11652021499} = {B9989964-17D0-454C-8EB9-25BA535F1789}
-		{57DC6E18-20BF-4B36-8981-8A8123064197} = {B9989964-17D0-454C-8EB9-25BA535F1789}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {230E1613-95FC-4789-8ED5-DF67CD979803}

@@ -15,7 +15,7 @@
         <StackPanel Width="200" Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
                 <Label Background="AliceBlue" Content="Name" />
-                <TextBox Background="AliceBlue" Text="{Binding Name}" Width="100"/>
+                <TextBox Background="AliceBlue" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"  Width="100"/>
             </StackPanel>
             <Label Background="GreenYellow" Content="{Binding Time}" />
 

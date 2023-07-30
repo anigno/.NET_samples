@@ -25,7 +25,7 @@ namespace WpfSimple
             get => name; set
             {
                 name = value;
-                Console.WriteLine($"name has changed to {name}");
+                System.Diagnostics.Debug.WriteLine($"name has changed to {name}");
             }
         }
 

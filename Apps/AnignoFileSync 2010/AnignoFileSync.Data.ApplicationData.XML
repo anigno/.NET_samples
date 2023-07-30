@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ApplicationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SyncItems>
+    <SyncItem>
+      <SourceDir>D:\_Anigno Documents</SourceDir>
+      <DestDir>\\anignora\w\Synced Backup\_Anigno Documents</DestDir>
+      <KeepHistory>false</KeepHistory>
+      <Include>*</Include>
+      <Exclude>*Log-*;*ReSharper*;*bin\Debug*;*obj\Debug*</Exclude>
+    </SyncItem>
+  </SyncItems>
+</ApplicationData>
