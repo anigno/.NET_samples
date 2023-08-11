@@ -21,7 +21,8 @@ namespace ParallelProgrammingTesting
         {
             //TaskExceptionTest.Test();
             //TestTaskExceptions();
-            TestTaskDelay();
+            //TestTaskDelay();
+            TestTAsks();
         }
 
         private void TestTaskDelay()
@@ -33,7 +34,8 @@ namespace ParallelProgrammingTesting
                     Console.WriteLine("A {0} {1}", DateTime.Now.ToString("ss.fff"), a);
                     TaskDelay(500).Wait();
                 }
-            });Task.Factory.StartNew( async () =>
+            });
+            Task.Factory.StartNew( async () =>
             {
                 for (int a = 0; a < 5; a++)
                 {
@@ -91,7 +93,7 @@ namespace ParallelProgrammingTesting
             int managedThreadId = Thread.CurrentThread.ManagedThreadId;
             for (int a = 0; a < 5; a++)
             {
-                Console.WriteLine("Threads:{3} Name:{0} T:{1} A:{2}", p_iName, managedThreadId, a);
+                Console.WriteLine("Threads:{3} Name:{0} T:{1} A:{2}", p_iName, managedThreadId, a,0);
                 Thread.Sleep(100);
             }
             return managedThreadId;

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UavManager", "UavManager\Ua
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpCommunicator", "HttpCommunicator\HttpCommunicator.csproj", "{48795F59-24BE-4D9C-BAE9-D8DD364D6BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{64173975-8BAA-4138-891C-3C0BF007191A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{C6BD8A2A-FA54-42A2-B5F9-B5663AE0A6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{48795F59-24BE-4D9C-BAE9-D8DD364D6BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48795F59-24BE-4D9C-BAE9-D8DD364D6BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48795F59-24BE-4D9C-BAE9-D8DD364D6BE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64173975-8BAA-4138-891C-3C0BF007191A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64173975-8BAA-4138-891C-3C0BF007191A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64173975-8BAA-4138-891C-3C0BF007191A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64173975-8BAA-4138-891C-3C0BF007191A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BD8A2A-FA54-42A2-B5F9-B5663AE0A6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BD8A2A-FA54-42A2-B5F9-B5663AE0A6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BD8A2A-FA54-42A2-B5F9-B5663AE0A6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BD8A2A-FA54-42A2-B5F9-B5663AE0A6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

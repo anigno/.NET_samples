@@ -10,6 +10,7 @@
 
         GameOfLife.GameOfLife game = new GameOfLife.GameOfLife(lives);
         game.Run(generations: 15);
+        Console.ReadKey();
     }
 }
 
