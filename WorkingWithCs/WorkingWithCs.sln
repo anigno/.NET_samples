@@ -17,6 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadersWritersProblem", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{083B45DE-1088-401B-B4C3-D64E6F35BA31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeatcodeQuestions", "LeatcodeQuestions\LeatcodeQuestions.csproj", "{EAC84614-8D30-4370-AF4B-30158CFF3A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{C106009A-9B64-4771-B6EF-095103257B2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB3CAA1D-360B-4020-93F8-076E70186882}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +56,14 @@ Global
 		{083B45DE-1088-401B-B4C3-D64E6F35BA31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{083B45DE-1088-401B-B4C3-D64E6F35BA31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{083B45DE-1088-401B-B4C3-D64E6F35BA31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC84614-8D30-4370-AF4B-30158CFF3A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC84614-8D30-4370-AF4B-30158CFF3A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC84614-8D30-4370-AF4B-30158CFF3A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC84614-8D30-4370-AF4B-30158CFF3A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C106009A-9B64-4771-B6EF-095103257B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C106009A-9B64-4771-B6EF-095103257B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C106009A-9B64-4771-B6EF-095103257B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C106009A-9B64-4771-B6EF-095103257B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,6 +30,15 @@ namespace CodeSamples
             return head;
         }
 
+        public static void PrintListNodes(ListNode head, string comment = "no comment")
+        {
+            for (ListNode? i = head; i != null; i = i.next)
+            {
+                Console.Write($"{i.val} ");
+            }
+            Console.WriteLine(comment);
+        }
+
         public ListNode InsertSort(ListNode head)
         {
             for (ListNode? i = head; i != null; i = i.next)
@@ -45,6 +54,7 @@ namespace CodeSamples
             return head;
         }
 
+        #region MergeSort
         public ListNode MergeSort(ListNode head)
         {
             int length = calcLength(head);
@@ -73,13 +83,13 @@ namespace CodeSamples
             ListNode? iNode = null;
             if (left.val < right.val)
             {
-                iNode= left;
+                iNode = left;
                 left = left.next;
             }
             else
             {
-                iNode= right;
-                right=right.next;
+                iNode = right;
+                right = right.next;
             }
             ListNode? mergedNode = iNode;
 
@@ -91,13 +101,13 @@ namespace CodeSamples
                     iNode = iNode.next;
                     right = right.next;
                 }
-                else if(right==null || left.val < right.val)
+                else if (right == null || left.val < right.val)
                 {
                     iNode.next = left;
                     iNode = iNode.next;
                     left = left.next;
                 }
-                else 
+                else
                 {
                     iNode.next = right;
                     iNode = iNode.next;
@@ -131,15 +141,9 @@ namespace CodeSamples
         {
             (j.val, i.val) = (i.val, j.val);
         }
+        #endregion
 
-        public static void PrintListNodes(ListNode head, string comment = "no comment")
-        {
-            for (ListNode? i = head; i != null; i = i.next)
-            {
-                Console.Write($"{i.val} ");
-            }
-            Console.WriteLine(comment);
-        }
+
     }
 }
 

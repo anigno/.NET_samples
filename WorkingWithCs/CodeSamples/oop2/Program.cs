@@ -14,9 +14,9 @@ namespace OopExample
         }
     }
 
-    internal class Program
+    internal class ProgramTestint
     {
-        static void Main(string[] args)
+        public void Run(string[] args)
         {
             RationalNumber r1 = new RationalNumber(1, 4);
             RationalNumber r2 = new RationalNumber(2, 3);

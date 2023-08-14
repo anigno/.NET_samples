@@ -41,6 +41,25 @@
             foreach (int i in skipTakeArray) Console.Write($"{i}");
             Console.WriteLine();
 
+            int[] ints = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            ArraySegment<int> arrySeg = new ArraySegment<int>(ints, 2, 3);
+            arrySeg[0] = 99;
+            for (int q = 0; q < ints.Length; q++)
+                Console.Write($"{q}:{ints[q]} ");
+            Console.WriteLine();
+            for (int q = 0; q < arrySeg.Count; q++)
+                Console.Write($"{q}:{arrySeg[q]} ");
+            Console.WriteLine();
+            int[] newArry=new int[3];
+            Array.Copy(ints, 2, newArry, 0, 3);
+            newArry[0] = 55;
+            for (int q = 0; q < ints.Length; q++)
+                Console.Write($"{q}:{ints[q]} ");
+            Console.WriteLine();
+            for (int q = 0; q < newArry.Length; q++)
+                Console.Write($"{q}:{newArry[q]} ");
+            Console.WriteLine();
+
         }
     }
 }

@@ -32,4 +32,9 @@ using CodeSamples.oop;
 
 //var sln = new Solution_2();
 
+//DelegatesActionAndFunc f = new DelegatesActionAndFunc();
+//f.EventsAndDelegates();
 
+EventsSample es=new EventsSample();
+
+Console.ReadKey();
