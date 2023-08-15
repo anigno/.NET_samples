@@ -1,28 +1,17 @@
-﻿using Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Xml.Schema;
 
-namespace TestProject
+namespace TasksAndAsync
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Program p = new Program();
+            AsyncAwaitExample2 example2 = new AsyncAwaitExample2();
             Console.ReadKey();
         }
-
-        public Program()
-        {
-           
-
-        }
-
- 
     }
 }
