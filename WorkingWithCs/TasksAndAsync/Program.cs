@@ -10,7 +10,11 @@ namespace TasksAndAsync
     {
         static void Main(string[] args)
         {
-            AsyncAwaitExample2 example2 = new AsyncAwaitExample2();
+            //AsyncAwaitExample2 example2 = new AsyncAwaitExample2();
+            //AsyncCancelationExample1 example1= new AsyncCancelationExample1();
+            ParallelRunExample parallelRunExample = new ParallelRunExample();
+            
+            Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }
     }
