@@ -154,6 +154,12 @@ namespace LeatcodeQuestions
         }
 
         #endregion
+
+        //given list of horizontal lines start and end, find vectical line that crosses as many
+        int FindBestCrossingVerticalLine(int[] horLinesStart, int[] horLinesEnd)
+        {
+            return -1;
+        }
     }
 }
 

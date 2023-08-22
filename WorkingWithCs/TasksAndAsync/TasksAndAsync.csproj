@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AsyncAwaitExample2.cs" />
     <Compile Include="AsyncCancelationExample1.cs" />
+    <Compile Include="LimitNumberOfTasks.cs" />
     <Compile Include="ParallelRunExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,7 +15,7 @@ namespace TasksAndAsync
             Logger.Log("0-calling CallHeavyMethodAsync");
             var t = CallHeavyMethodAsync(17);
             Logger.Log($"2-after CallHeavyMethodAsync \n\n(doing other staff here)\n");
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 9; i++)
             {
                 Thread.Sleep(500);
                 Logger.Log("staff");
@@ -34,7 +34,12 @@ namespace TasksAndAsync
         private string HeavyMethod(int someNumber)
         {
             Logger.Log($"3-enter Task method: HeavyMethod with param: {someNumber}");
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
+            long q = 0;
+            for (int i = 0; i < 1999999999; i++)
+            {
+                q = q + i;
+            }
             return $"{someNumber}*2={someNumber * 2}";
         }
     }

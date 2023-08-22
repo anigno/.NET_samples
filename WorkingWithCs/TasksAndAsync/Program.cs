@@ -12,8 +12,8 @@ namespace TasksAndAsync
         {
             //AsyncAwaitExample2 example2 = new AsyncAwaitExample2();
             //AsyncCancelationExample1 example1= new AsyncCancelationExample1();
-            ParallelRunExample parallelRunExample = new ParallelRunExample();
-            
+            //ParallelRunExample parallelRunExample = new ParallelRunExample();
+            LimitNumberOfTasks limitNumberOfTasks = new LimitNumberOfTasks();
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }
